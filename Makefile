@@ -6,7 +6,7 @@
 #    By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/21 00:04:57 by dsilva-g          #+#    #+#              #
-#    Updated: 2023/08/29 13:15:30 by dsilva-g         ###   ########.fr        #
+#    Updated: 2023/08/30 01:39:34 by dsilva-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ DIR_DUP			=	mkdir -p $(@D)
 
 all				:	$(NAME)
 
-$(NAME)			:	$(OBJ_C) $(LIBFT)
+$(NAME)			:	$(OBJ) $(LIBFT)
 					$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 					@echo -e "$(MAGENTA)File $(NAME)$(GREEN) compiled!$(WHITE)"
 
