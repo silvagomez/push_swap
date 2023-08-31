@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:49:31 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/08/31 14:17:15 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/08/31 14:21:24 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,7 +125,8 @@ int	main(int ac, char *av[])
 	stk = (t_stack *)ft_calloc(sizeof(t_stack), 1);
 	if(!stk)
 		error_handling("ERROR : malloc");
-	(void) stk;
+	free(stk);
+	stk = NULL;
 	return (0);
 }
 
