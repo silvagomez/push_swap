@@ -6,7 +6,7 @@
 #    By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/21 00:04:57 by dsilva-g          #+#    #+#              #
-#    Updated: 2023/08/30 01:39:34 by dsilva-g         ###   ########.fr        #
+#    Updated: 2023/08/31 10:41:28 by dsilva-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,8 @@ NAME			:=	push_swap
 #------------------------------------------------------------------------------#
 
 CC				:=	cc
-CFLAGS			:=	-Wall -Wextra -Werror -fsanitize=address -g3
-#CFLAGS			:=	-Wall -Wextra -Werror
+#CFLAGS			:=	-Wall -Wextra -Werror -fsanitize=address -g3
+CFLAGS			:=	-Wall -Wextra -Werror -g
 
 INCLUDE_PATH	:=	include/
 INCLUDE			:=	$(INCLUDE_PATH)push_swap.h
