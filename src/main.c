@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:49:31 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/08/31 13:43:20 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/08/31 14:17:15 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,24 +107,27 @@ int	main(int ac, char *av[])
 	char	**str_num;
 	t_stack	*stk;
 
+	str_num = NULL;
 	if (ac == 1)
 		error_handling(NULL);
 	else if (ac == 2)
 	{
 		validate_str_av(av[1]);
-		str_num = NULL;
 		str_num = ft_split(av[1], ' ');
 		validate_av(str_num);
 	}
 	else
 	{
-		str_num = NULL;
 		str_num = av + 1;
 		validate_av(str_num);
 	}
+	free_2d_str(&str_num);
 	stk = (t_stack *)ft_calloc(sizeof(t_stack), 1);
 	if(!stk)
 		error_handling("ERROR : malloc");
 	(void) stk;
 	return (0);
 }
+
+//LEAKS
+//Liberar split
