@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:49:31 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/04 11:37:37 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/04 12:08:09 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	error_handling(char *s)
 	}
 }
 
-void	free_2d_str(char ***s)
+void	free_2d_str(char **s)
 {
 	int	idx;
 
@@ -96,7 +96,7 @@ void	validate_av(char **str_num)
 		if (validate_chr(str_num[idx]) == 0)
 		{
 			//return (0);
-			free_2d_str(&str_num);
+			free_2d_str(str_num);
 			error_handling("ERROR : argv must be numbers");
 		}
 		idx++;

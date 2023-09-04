@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 17:19:51 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/04 10:44:52 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/04 11:55:11 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,13 @@ static size_t	ft_wrdlen(const char *s, char c)
 	return (len);
 }
 
+// New free
 static char	**ft_free(char **words_lst, size_t w_idx)
 {
 	while (w_idx > 0)
 	{
-		w_idx--;
 		free(words_lst[w_idx]);
+		w_idx--;
 	}
 	free(words_lst);
 	return (NULL);
