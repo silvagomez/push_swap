@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:49:31 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/04 13:47:03 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/04 14:02:21 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	validate_chr(char *s)
 	return (1);
 }
 
-void	validate_av(char **str_num)
+void	validate_av(char **str_num, int condition)
 //void	validate_av(char **str_num, int size)
 {
 	int	idx;
@@ -107,10 +107,10 @@ void	validate_av(char **str_num)
 
 int	main(int ac, char *av[])
 {
-	char	**str_num;
+	int	**num;
 	//t_stack	*stk;
 
-	str_num = NULL;
+	num = NULL;
 	if (ac == 1)
 		error_handling(NULL);
 	else if (ac == 2)
@@ -124,6 +124,7 @@ int	main(int ac, char *av[])
 		str_num = av + 1;
 		validate_av(str_num);
 	}
+	//This free is only for else if case 
 	free_2d_str(str_num);
 	/*
 	stk = (t_stack *)ft_calloc(sizeof(t_stack), 1);
@@ -134,6 +135,3 @@ int	main(int ac, char *av[])
 	*/
 	return (0);
 }
-
-//LEAKS
-//Liberar split
