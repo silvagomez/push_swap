@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:49:31 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/04 14:02:21 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/04 17:53:15 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	validate_chr(char *s)
 	return (1);
 }
 
-void	validate_av(char **str_num, int condition)
+void	validate_av(char **str_num, int event)
 //void	validate_av(char **str_num, int size)
 {
 	int	idx;
@@ -96,7 +96,8 @@ void	validate_av(char **str_num, int condition)
 		if (validate_chr(str_num[idx]) == 0)
 		{
 			//return (0);
-			free_2d_str(str_num);
+			if (event == 1)
+				free_2d_str(str_num);
 			error_handling("ERROR : argv must be numbers");
 		}
 		idx++;
@@ -107,25 +108,26 @@ void	validate_av(char **str_num, int condition)
 
 int	main(int ac, char *av[])
 {
-	int	**num;
+	char	**str_num;
 	//t_stack	*stk;
 
-	num = NULL;
 	if (ac == 1)
 		error_handling(NULL);
 	else if (ac == 2)
 	{
+		str_num = NULL;
 		validate_str_av(av[1]);
 		str_num = ft_split(av[1], ' ');
-		validate_av(str_num);
+		validate_av(str_num, 1);
+		//This free is only for else if case 
+		free_2d_str(str_num);
 	}
 	else
 	{
-		str_num = av + 1;
-		validate_av(str_num);
+		//str_num = av + 1;
+		//validate_av(str_num);
+		validate_av(av + 1, 0);
 	}
-	//This free is only for else if case 
-	free_2d_str(str_num);
 	/*
 	stk = (t_stack *)ft_calloc(sizeof(t_stack), 1);
 	if(!stk)
