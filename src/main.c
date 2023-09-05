@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:49:31 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/05 17:13:00 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/06 01:09:05 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 
 void	error_handling(char *s)
 {
-	if (s == NULL)
-	{
-		exit(1);
-	}
-	else
-	{
 		ft_printf("%s\n", s);
 		exit(1);
-	}
+}
+
+void	error_terminate(void)
+{
+	ft_putendl_fd("Error", 2);
+	exit(1);
 }
 
 void	free_2d_str(char **s)
@@ -36,6 +35,16 @@ void	free_2d_str(char **s)
 		idx++;
 	}
 	free(s);
+}
+
+void	error_validate(char **s, int event)
+{
+	if (event == 1)
+	{
+		free_2d_str(s);
+		error_terminate();
+	}
+		error_terminate();
 }
 
 /*
@@ -83,37 +92,100 @@ int	validate_chr(char *s)
 	}
 	return (1);
 }
-
-void	validate_limits(char **str_num, int size)
-{
-	int	nums[];
-
-	nums = (int *)malloc(size * sizeof(int));
-	if (!num)
-	(void) str_num;
-}
-
+/*
 void	validate_av(char **str_num, int event)
 //void	validate_av(char **str_num, int size)
 {
-	int	idx;
+	int		idx;
+	long	num;
 
 	idx = 0;
 	while (str_num[idx])
 	{
 		if (validate_chr(str_num[idx]) == 0)
 		{
-			//return (0);
+			if (event == 1)
+				free_2d_str(str_num);
+			error_handling("ERROR : argv must be numbers");
+		}
+		num = ft_atol(str_num[idx]);
+		if (num < -2147483648 || num > 2147483647)
+		{
 			if (event == 1)
 				free_2d_str(str_num);
 			error_handling("ERROR : argv must be numbers");
 		}
 		idx++;
 	}
-	validate_limits(str_num, idx);
-	//return (1);
+	if (event == 1)
+		free_2d_str(str_num);
+}
+*/
+
+int	is_duplicate(long *nums, int size)
+{
+	int		i;
+	int		j;
+	long	aux;
+
+	i = 0;
+	while(i < size)
+	{
+		aux = nums[i];
+		j = 0;
+		while (j < size)
+		{
+			if (aux == nums[j])
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
 }
 
+void	validate_is_duplicate(char **str_num, int size,  int event)
+{
+	long	*nums;
+	int		idx;
+
+	nums = (long *)malloc(size * sizeof(long));
+	if (!nums)
+		error_validate(str_num, event);
+	idx = 0;
+	while (str_num[idx])
+	{
+		nums[idx] = ft_atol(str_num[idx]);
+		idx++;
+	}
+	if (is_duplicate(nums, size) == 1)
+	{
+		free(nums);
+		error_validate(str_num, event);
+	}
+	free(nums);
+}
+
+
+void	validate_av(char **str_num, int event)
+{
+	int		idx;
+	long	num;
+
+	idx = 0;
+	while (str_num[idx])
+	{
+		if (validate_chr(str_num[idx]) == 0)
+			error_validate(str_num, event);
+		num = ft_atol(str_num[idx]);
+		if (num < -2147483648 || num > 2147483647)
+			error_validate(str_num, event);
+		idx++;
+	}
+	validate_is_duplicate(str_num, idx, event);
+	if (event == 1)
+		free_2d_str(str_num);
+}
 
 int	main(int ac, char *av[])
 {
@@ -121,20 +193,17 @@ int	main(int ac, char *av[])
 	//t_stack	*stk;
 
 	if (ac == 1)
-		error_handling(NULL);
+		return (0);
 	else if (ac == 2)
 	{
-		str_num = NULL;
+		//str_num = NULL;
 		validate_str_av(av[1]);
 		str_num = ft_split(av[1], ' ');
 		validate_av(str_num, 1);
-		//This free is only for else if case 
-		free_2d_str(str_num);
+		//free_2d_str(str_num);
 	}
 	else
 	{
-		//str_num = av + 1;
-		//validate_av(str_num);
 		validate_av(av + 1, 0);
 	}
 	/*
