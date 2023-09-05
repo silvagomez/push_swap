@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:49:31 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/04 17:53:15 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/05 17:13:00 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,15 @@ int	validate_chr(char *s)
 	return (1);
 }
 
+void	validate_limits(char **str_num, int size)
+{
+	int	nums[];
+
+	nums = (int *)malloc(size * sizeof(int));
+	if (!num)
+	(void) str_num;
+}
+
 void	validate_av(char **str_num, int event)
 //void	validate_av(char **str_num, int size)
 {
@@ -92,7 +101,6 @@ void	validate_av(char **str_num, int event)
 	idx = 0;
 	while (str_num[idx])
 	{
-		ft_printf("antes %s\n", str_num[idx]);
 		if (validate_chr(str_num[idx]) == 0)
 		{
 			//return (0);
@@ -102,6 +110,7 @@ void	validate_av(char **str_num, int event)
 		}
 		idx++;
 	}
+	validate_limits(str_num, idx);
 	//return (1);
 }
 
