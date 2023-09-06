@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:50:11 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/06 14:06:11 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/06 16:54:52 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,6 @@ typedef struct s_stack_node
 	struct s_stack_node *prev;
 
 }				t_stack_node;
-
-typedef struct	s_stack
-{
-	int				size;
-	int				max;
-	int				min;
-	t_stack_node	a;
-	t_stack_node	b;
-
-}				t_stack;
 
 // Validate functions
 void	validate_str_av(char *s);
