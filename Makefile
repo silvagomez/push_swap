@@ -6,7 +6,7 @@
 #    By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/21 00:04:57 by dsilva-g          #+#    #+#              #
-#    Updated: 2023/09/06 14:06:14 by dsilva-g         ###   ########.fr        #
+#    Updated: 2023/09/06 23:53:03 by dsilva-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,8 @@ SRC				:=	\
 					validate.c \
 					ft_atol.c \
 					error.c \
-					free_memory.c
+					free_memory.c \
+					push_swap.c
 
 SRC				:=	$(SRC:%=$(SRC_PATH)%)
 

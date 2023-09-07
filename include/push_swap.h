@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:50:11 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/06 16:54:52 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/06 23:52:25 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,17 @@
 // Allowed libraries
 # include "../libft/libft.h"
 
-typedef struct s_stack_node
+typedef struct s_stack
 {
 	int					value;
-	int					position;
+	unsigned int		position;
+	unsigned int		move_cost;
+	unsigned int		above_median;
+	unsigned int		cheapest;
+	struct s_stack_node	*target;
 	struct s_stack_node	*next;
 	struct s_stack_node *prev;
-
-}				t_stack_node;
+}				t_stack;
 
 // Validate functions
 void	validate_str_av(char *s);
@@ -41,4 +44,5 @@ void	error_validate(char **s, int event);
 // Free memory functions
 void	free_2d_str(char **s);
 
+void    stack_init(t_stack **stack, int nbr);
 #endif

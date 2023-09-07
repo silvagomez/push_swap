@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 12:28:30 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/06 14:06:10 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/06 18:23:36 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	is_duplicate(long *nums, int size)
 	return (0);
 }
 
-void	validate_is_duplicate(char **str_num, int size,  int event)
+void	validate_is_duplicate(char **str_num, int size, int event)
 {
 	long	*nums;
 	int		idx;
@@ -110,6 +110,7 @@ void	validate_av(char **str_num, int event)
 		idx++;
 	}
 	validate_is_duplicate(str_num, idx, event);
-	if (event == 1)
+	//THIS SHOULD BE GO IN stack_init
+	if (event == 2)
 		free_2d_str(str_num);
 }
