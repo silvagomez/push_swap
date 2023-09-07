@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 12:28:30 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/06 18:23:36 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/07 15:40:23 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ void	validate_str_av(char *s)
 	}
 }
 
-int	is_duplicate(long *nums, int size)
+int	is_duplicate(long *nums, unsigned int size)
 {
-	int		i;
-	int		j;
-	long	aux;
-	int		duplicate;
+	unsigned int	i;
+	unsigned int	j;
+	long			aux;
+	unsigned int	duplicate;
 
 	i = 0;
 	while(i < size)
@@ -54,10 +54,10 @@ int	is_duplicate(long *nums, int size)
 	return (0);
 }
 
-void	validate_is_duplicate(char **str_num, int size, int event)
+void	validate_is_duplicate(char **str_num, unsigned int size, int event)
 {
-	long	*nums;
-	int		idx;
+	long			*nums;
+	unsigned int	idx;
 
 	nums = (long *)malloc(size * sizeof(long));
 	if (!nums)
@@ -96,8 +96,8 @@ int	validate_chr(char *s)
 
 void	validate_av(char **str_num, int event)
 {
-	int		idx;
-	long	num;
+	unsigned int	idx;
+	long			num;
 
 	idx = 0;
 	while (str_num[idx])
@@ -110,7 +110,7 @@ void	validate_av(char **str_num, int event)
 		idx++;
 	}
 	validate_is_duplicate(str_num, idx, event);
-	//THIS SHOULD BE GO IN stack_init
-	if (event == 2)
-		free_2d_str(str_num);
+	//THIS SHOULD BE GO IN stack_initi or in the main
+	//if (event == 2)
+	//	free_2d_str(str_num);
 }
