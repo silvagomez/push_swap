@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:50:11 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/07 16:59:16 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/07 17:59:51 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 
 typedef struct s_stack
 {
-	int					value;
-	unsigned int		position;
-	unsigned int		move_cost;
-	unsigned int		above_median;
-	unsigned int		cheapest;
-	struct s_stack_node	*target;
-	struct s_stack_node	*next;
-	struct s_stack_node *prev;
+	int				value;
+	unsigned int	position;
+	unsigned int	move_cost;
+	unsigned int	above_median;
+	unsigned int	cheapest;
+	struct s_stack	*target;
+	struct s_stack	*next;
+	struct s_stack	*prev;
 }				t_stack;
 
 // Validate functions

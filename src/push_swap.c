@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:49:31 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/07 17:11:50 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/07 17:59:47 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,23 +38,38 @@ int	*get_nums(char **str_num, unsigned int size, int event)
 	return (nums);
 }
 
+void	lstlast_ps(t_stack *node
+
+
+void	lstadd_back_ps(t_stack **stack, t_stack *new)
+{
+	if (!stack || !new)
+		return ;
+	if (*stack == NULL)
+		*stack = new;
+	else
+		(lstlast_ps(*stack))->next = new;
+}
+
+
 void    stack_init(t_stack **stack, int num)
 {
     t_stack    *node;
     //t_stack    *last_node;
 
-    if (NULL == stack)
+    if (!stack)
         ft_printf("is null **stack !!!\n");
     node = malloc(sizeof(t_stack));
-    if (NULL == node)
+    if (!node)
 	{
+		// here error and free
 		ft_printf("node is null !!!!\n");
         return ;
 	}
 	ft_printf("Before node->\n");
     node->next = NULL;
     node->value = num;
-    if (NULL == *stack)
+    if (!*stack)
     {
 		ft_printf("Inside->\n");
         *stack = node;
@@ -64,6 +79,8 @@ void    stack_init(t_stack **stack, int num)
     else
     {
 		ft_printf("Inside--->\n");
+		//Here add last to stack a
+
         //last_node = find_last_node(*stack);
         //last_node->next = node;
         //node->prev = last_node;
