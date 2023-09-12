@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:49:31 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/07 17:59:47 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/12 01:50:48 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,35 +38,51 @@ int	*get_nums(char **str_num, unsigned int size, int event)
 	return (nums);
 }
 
-void	lstlast_ps(t_stack *node
-
-
-void	lstadd_back_ps(t_stack **stack, t_stack *new)
+t_stack	*stack_get_last_node(t_stack *stack)
 {
-	if (!stack || !new)
-		return ;
-	if (*stack == NULL)
-		*stack = new;
-	else
-		(lstlast_ps(*stack))->next = new;
+	if (!stack)
+		//Should be a error?
+		return (NULL);
+	while (stack->next)
+		stack = stack->next;
+	return (stack);
 }
 
+unsigned int	stack_size(t_stack *stack)
+{
+	unsigned int	size;
 
-void    stack_init(t_stack **stack, int num)
+	if (!stack)
+		return (0);
+	size = 0;
+	while (stack)
+	{
+		++size;
+		stack = stack->next;
+	}
+	return (size);
+}
+
+/*
+ * The a stack pointer changes only once -> from NULL to the first node.
+ *
+ */
+void    stack_add_node(t_stack **stack, int num)
 {
     t_stack    *node;
-    //t_stack    *last_node;
+    t_stack    *last_node;
 
     if (!stack)
-        ft_printf("is null **stack !!!\n");
+		return ;
+        //ft_printf("is null **stack !!!\n");
     node = malloc(sizeof(t_stack));
     if (!node)
 	{
 		// here error and free
+		// free_stack();
 		ft_printf("node is null !!!!\n");
         return ;
 	}
-	ft_printf("Before node->\n");
     node->next = NULL;
     node->value = num;
     if (!*stack)
@@ -79,33 +95,79 @@ void    stack_init(t_stack **stack, int num)
     else
     {
 		ft_printf("Inside--->\n");
-		//Here add last to stack a
-
-        //last_node = find_last_node(*stack);
-        //last_node->next = node;
-        //node->prev = last_node;
+        last_node = stack_get_last_node(*stack);
+        last_node->next = node;
+        node->prev = last_node;
     }
+}
+
+void    stack_init(t_stack **stack, char **str_num, int event)
+{
+	int				*nums;
+	unsigned int	size;
+	unsigned int	idx;
+	
+	size = get_size(str_num);
+	nums = get_nums(str_num, size, event);
+	idx = 0;
+	while (idx < size)
+	{
+		stack_add_node(stack, nums[idx]);
+		idx++;
+	}
+	free(nums);
+}
+
+void	stack_free(t_stack **stack)
+{
+	t_stack	*temp;
+	t_stack	*current;
+
+	if (!stack)
+		return ;
+	current = *stack;
+	while (current)
+	{
+		temp = current->next;
+		free(current);
+		current = temp;
+	}
+	*stack = NULL;
+}
+
+int	is_stack_sorted(t_stack *stack)
+{
+	if (!stack)
+		return (1);
+	while (stack->next)
+	{
+		if (stack->value > stack->next->value)
+		{
+			ft_printf("NOT sorted\n");
+			return (0);
+		}
+		stack = stack->next;
+	}
+	ft_printf("is sorted\n");
+	return (1);
 }
 
 void	push_swap(char **str_num, int event)
 {
 	t_stack			*a;
 	//t_stack 		*b;
-	int				*nums;
-	unsigned int	size;
-	unsigned int	idx;
 
 	a = NULL;
 	//b = NULL;
-	size = get_size(str_num);
-	nums = get_nums(str_num, size, event);
-	idx = 0;
-	while (idx < size)
+	stack_init(&a, str_num, event);
+	if (!is_stack_sorted(a))
 	{
-		stack_init(&a, nums[idx]);
-		idx++;
+		if (stack_size(a) == 2)
+			sa(&a);
+		//else if (stack_size == 3)
+		//	sort_three(&a);
+		//else
+		//	sort_stack(&a, &b);
 	}
-	//stack_init(&a, nums);
-	//stack_init(&a, str_num, ac);
-	free(nums);
+	stack_free(&a);
 }

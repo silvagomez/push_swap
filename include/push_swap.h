@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:50:11 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/07 17:59:51 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/11 21:05:42 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,19 @@ void	error_validate(char **s, int event);
 void	free_2d_str(char **s);
 
 //	Push swap functions
-
-void	push_swap(char **str_num, int event);
-void    stack_init(t_stack **stack, int nbr);
-int	*get_nums(char **str_num, unsigned int size, int event);
+void			push_swap(char **str_num, int event);
+int				*get_nums(char **str_num, unsigned int size, int event);
 unsigned int	get_size(char **str_num);
+
+// Stack structure functions
+void			stack_init(t_stack **stack, char **str_num, int event);
+t_stack			*stack_get_last_node(t_stack *stack);
+void			stack_add_node(t_stack **stack, int num);
+unsigned int	stack_size(t_stack *stack);
+void			stack_free(t_stack **stack);
+
+// Swap functions sa | sb | ss
+void	sa(t_stack **a);
+void	sb(t_stack **b);
+void	ss(t_stack **a, t_stack **b);
 #endif
