@@ -6,7 +6,7 @@
 #    By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/21 00:04:57 by dsilva-g          #+#    #+#              #
-#    Updated: 2023/09/11 21:07:45 by dsilva-g         ###   ########.fr        #
+#    Updated: 2023/09/12 21:40:06 by dsilva-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,11 @@ SRC				:=	\
 					error.c \
 					free_memory.c \
 					push_swap.c \
-					swap.c
+					push.c \
+					swap.c \
+					rotate.c \
+					reverse_rotate.c\
+					sort_three.c
 
 SRC				:=	$(SRC:%=$(SRC_PATH)%)
 

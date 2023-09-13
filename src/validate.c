@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 12:28:30 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/07 15:40:23 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/12 18:42:40 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	validate_str_av(char *s)
 {
-	unsigned int	idx;
+	size_t	idx;
 
 	if (!s || !*s)
 		error_terminate("ERROR 1");
@@ -28,12 +28,12 @@ void	validate_str_av(char *s)
 	}
 }
 
-int	is_duplicate(long *nums, unsigned int size)
+int	is_duplicate(long *nums, size_t size)
 {
-	unsigned int	i;
-	unsigned int	j;
-	long			aux;
-	unsigned int	duplicate;
+	size_t	i;
+	size_t	j;
+	long	aux;
+	size_t	duplicate;
 
 	i = 0;
 	while(i < size)
@@ -54,10 +54,10 @@ int	is_duplicate(long *nums, unsigned int size)
 	return (0);
 }
 
-void	validate_is_duplicate(char **str_num, unsigned int size, int event)
+void	validate_is_duplicate(char **str_num, size_t size, int event)
 {
-	long			*nums;
-	unsigned int	idx;
+	long	*nums;
+	size_t	idx;
 
 	nums = (long *)malloc(size * sizeof(long));
 	if (!nums)
@@ -78,7 +78,7 @@ void	validate_is_duplicate(char **str_num, unsigned int size, int event)
 
 int	validate_chr(char *s)
 {
-	unsigned int	idx;
+	size_t	idx;
 
 	idx = 0;
 	if (ft_isdigit(s[idx]) || s[idx] == '-' || s[idx] == '+')
@@ -96,8 +96,8 @@ int	validate_chr(char *s)
 
 void	validate_av(char **str_num, int event)
 {
-	unsigned int	idx;
-	long			num;
+	size_t	idx;
+	long	num;
 
 	idx = 0;
 	while (str_num[idx])

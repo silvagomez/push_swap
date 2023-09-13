@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:52:09 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/12 00:39:07 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/12 21:40:37 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	push(t_stack **dest, t_stack **src)
 	{
 		node_to_push->next = *dest;
 		node_to_push->next->prev = node_to_push;
-		*dest = node_to_push
+		*dest = node_to_push;
 	}
 }
 

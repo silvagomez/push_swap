@@ -6,25 +6,25 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:49:31 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/12 01:50:48 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/12 23:17:25 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-unsigned int	get_size(char **str_num)
+size_t	get_total_nums(char **str_num)
 {
-	unsigned int	size;
+	size_t	size;
 	size = 0;
 	while (str_num[size])
 		size++;
 	return (size);
 }
 
-int	*get_nums(char **str_num, unsigned int size, int event)
+int	*get_nums(char **str_num, size_t size, int event)
 {
-	int				*nums;
-	unsigned int	idx;
+	int		*nums;
+	size_t	idx;
 	
 	nums = (int *)malloc(size * sizeof(int));
 	if (!nums)
@@ -48,9 +48,9 @@ t_stack	*stack_get_last_node(t_stack *stack)
 	return (stack);
 }
 
-unsigned int	stack_size(t_stack *stack)
+size_t	stack_size(t_stack *stack)
 {
-	unsigned int	size;
+	size_t	size;
 
 	if (!stack)
 		return (0);
@@ -84,7 +84,7 @@ void    stack_add_node(t_stack **stack, int num)
         return ;
 	}
     node->next = NULL;
-    node->value = num;
+    node->num = num;
     if (!*stack)
     {
 		ft_printf("Inside->\n");
@@ -103,11 +103,11 @@ void    stack_add_node(t_stack **stack, int num)
 
 void    stack_init(t_stack **stack, char **str_num, int event)
 {
-	int				*nums;
-	unsigned int	size;
-	unsigned int	idx;
+	int		*nums;
+	size_t	size;
+	size_t	idx;
 	
-	size = get_size(str_num);
+	size = get_total_nums(str_num);
 	nums = get_nums(str_num, size, event);
 	idx = 0;
 	while (idx < size)
@@ -141,7 +141,7 @@ int	is_stack_sorted(t_stack *stack)
 		return (1);
 	while (stack->next)
 	{
-		if (stack->value > stack->next->value)
+		if (stack->num > stack->next->num)
 		{
 			ft_printf("NOT sorted\n");
 			return (0);
@@ -154,20 +154,20 @@ int	is_stack_sorted(t_stack *stack)
 
 void	push_swap(char **str_num, int event)
 {
-	t_stack			*a;
-	//t_stack 		*b;
+	t_stack	*a;
+	t_stack	*b;
 
 	a = NULL;
-	//b = NULL;
+	b = NULL;
 	stack_init(&a, str_num, event);
 	if (!is_stack_sorted(a))
 	{
 		if (stack_size(a) == 2)
 			sa(&a);
-		//else if (stack_size == 3)
-		//	sort_three(&a);
-		//else
-		//	sort_stack(&a, &b);
+		else if (stack_size(a) == 3)
+			sort_three(&a);
+		else
+			sort_stack(&a, &b);
 	}
 	stack_free(&a);
 }
