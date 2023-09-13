@@ -6,7 +6,7 @@
 #    By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/21 00:04:57 by dsilva-g          #+#    #+#              #
-#    Updated: 2023/09/12 21:40:06 by dsilva-g         ###   ########.fr        #
+#    Updated: 2023/09/13 11:25:05 by dsilva-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,8 @@ SRC				:=	\
 					swap.c \
 					rotate.c \
 					reverse_rotate.c\
-					sort_three.c
+					sort_three.c \
+					sort_stack.c
 
 SRC				:=	$(SRC:%=$(SRC_PATH)%)
 

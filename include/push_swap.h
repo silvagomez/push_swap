@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:50:11 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/12 23:13:52 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/13 11:25:40 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ t_stack	*stack_get_highest_node(t_stack *stack);
 
 
 void	sort_three(t_stack **a);
+void	sort_stack(t_stack **a, t_stack **b);
 
 // Push functions pa | pb
 void	pa(t_stack **a, t_stack **b);
