@@ -6,13 +6,13 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 12:31:05 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/15 22:59:35 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/16 00:58:17 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_three(t_stack **a)
+void	sort_three_nodes(t_stack **a)
 {
 	t_stack	*highest_node;
 
@@ -25,10 +25,29 @@ void	sort_three(t_stack **a)
 		sa(a);
 }
 
+void	sort_for_moves(t_stack **a, t_stack **b)
+{
+	while (stack_size(*a) > 3)
+	{
+		stack_init_nodes(*a, *b);
+		rotate_stack(
+		pb(b,a);
+	}
+}
+
 void	sort_stack(t_stack **a, t_stack **b)
 {
-	(void)a;
-	(void)b;
-	ft_printf("HOLA");
+	size_t	size_a;
 
+	size_a = stack_size(*a);
+	if (size_a == 5)
+		sort_for_moves(a, b);
+	else
+		while (size_a > 3)
+		{
+			pb (b, a);
+			size_a--;
+		}
+	sort_three_nodes(*a);
+	while (*b)
 }
