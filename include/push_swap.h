@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:50:11 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/13 11:25:40 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/15 22:36:21 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,13 @@ int		*get_nums(char **str_num, size_t size, int event);
 size_t	get_total_nums(char **str_num);
 
 // Stack structure functions
-void	stack_init(t_stack **stack, char **str_num, int event);
+void	stack_init_a(t_stack **a, char **str_num, int event);
 t_stack	*stack_get_last_node(t_stack *stack);
 void	stack_add_node(t_stack **stack, int num);
 size_t	stack_size(t_stack *stack);
 void	stack_free(t_stack **stack);
+t_stack	*stack_get_highest_node(t_stack *stack);
+t_stack *stack_get_lowest_node(t_stack *stack);
 t_stack	*stack_get_highest_node(t_stack *stack);
 
 
