@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 22:44:53 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/15 22:45:43 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/16 00:16:14 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,11 @@ void    stack_add_node(t_stack **stack, int num)
     node->num = num;
     if (!*stack)
     {
-		ft_printf("Inside->\n");
         *stack = node;
         node->prev = NULL;
-	ft_printf("End\n");
     }
     else
     {
-		ft_printf("Inside--->\n");
         last_node = stack_get_last_node(*stack);
         last_node->next = node;
         node->prev = last_node;
