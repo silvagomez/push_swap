@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:50:11 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/15 22:36:21 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/16 15:55:58 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,16 @@
 // Allowed libraries
 # include "../libft/libft.h"
 
+# define INTMAX 2147483647
+# define INTMIN (-2147483647 -1)
+# define LONGMAX 9223372036854775807L
+
 typedef struct s_stack
 {
 	int				num;
-	size_t			position;
+	size_t			idx;
 	size_t			move_cost;
-	size_t			above_median;
+	size_t			1st_half;
 	size_t			cheapest;
 	struct s_stack	*target;
 	struct s_stack	*next;
@@ -68,7 +72,7 @@ t_stack *stack_get_lowest_node(t_stack *stack);
 t_stack	*stack_get_highest_node(t_stack *stack);
 
 
-void	sort_three(t_stack **a);
+void	sort_three_nodes(t_stack **a);
 void	sort_stack(t_stack **a, t_stack **b);
 
 // Push functions pa | pb
