@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:50:11 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/16 15:55:58 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/19 16:19:59 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct s_stack
 	int				num;
 	size_t			idx;
 	size_t			move_cost;
-	size_t			1st_half;
+	size_t			fst_half;
 	size_t			cheapest;
 	struct s_stack	*target;
 	struct s_stack	*next;
