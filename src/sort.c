@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 12:31:05 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/19 16:32:43 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/20 23:12:59 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	sort_three_nodes(t_stack **a)
 		sa(a);
 }
 
-void	sort_to_five(t_stack **a, t_stack **b)
+void	sort_logic_five_nodes(t_stack **a, t_stack **b)
 {
 	while (stack_size(*a) > 3)
 	{
@@ -74,7 +74,7 @@ void	sort_stack(t_stack **a, t_stack **b)
 
 	size_a = stack_size(*a);
 	if (size_a == 5)
-		sort_to_five(a, b);
+		sort_logic_five_nodes(a, b);
 	else
 		while (size_a > 3)
 		{

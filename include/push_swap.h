@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:50:11 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/19 16:19:59 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/20 23:12:29 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,13 @@ void	free_2d_str(char **s);
 void	push_swap(char **str_num, int event);
 int		*get_nums(char **str_num, size_t size, int event);
 size_t	get_total_nums(char **str_num);
+
+//	Sort functions
+void	sort_three_nodes(t_stack **a);
+void	sort_logic_five_nodes(t_stack **a, t_stack **b);
+void	sort_stack(t_stack **a, t_stack **b);
+void	sort_to_optimize(t_stack **a, t_stack **b);
+void	sort_to_finish(t_stack **a);
 
 // Stack structure functions
 void	stack_init_a(t_stack **a, char **str_num, int event);

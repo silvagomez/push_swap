@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:49:31 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/15 22:58:13 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/20 23:12:40 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	push_swap(char **str_num, int event)
 		if (stack_size(a) == 2)
 			sa(&a);
 		else if (stack_size(a) == 3)
-			sort_three(&a);
+			sort_three_nodes(&a);
 		else
 			sort_stack(&a, &b);
 	}
