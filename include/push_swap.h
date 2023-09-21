@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:50:11 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/20 23:12:29 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/21 11:45:03 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct s_stack
 	int				num;
 	size_t			idx;
 	size_t			move_cost;
-	size_t			fst_half;
+	size_t			one_half;
 	size_t			cheapest;
 	struct s_stack	*target;
 	struct s_stack	*next;
@@ -61,26 +61,27 @@ void	push_swap(char **str_num, int event);
 int		*get_nums(char **str_num, size_t size, int event);
 size_t	get_total_nums(char **str_num);
 
+// Stack structure functions
+void	stack_init_a(t_stack **a, char **str_num, int event);
+void	stack_add_node(t_stack **stack, int num);
+size_t	stack_size(t_stack *stack);
+void	stack_free(t_stack **stack);
+t_stack	*stack_get_last_node(t_stack *stack);
+t_stack	*stack_get_highest_node(t_stack *stack);
+t_stack *stack_get_lowest_node(t_stack *stack);
+t_stack	*stack_get_cheapest_node(t_stack *stack);
+void	stack_init_nodes(t_stack *a, t_stack *b);
+void	stack_set_idx(t_stack *stack);
+void	stack_set_target(t_stack *a, t_stack *b);
+void	stack_set_move_cost(t_stack *a, t_stack *b);
+void	stack_set_cheapest(t_stack *b);
+
 //	Sort functions
 void	sort_three_nodes(t_stack **a);
 void	sort_logic_five_nodes(t_stack **a, t_stack **b);
 void	sort_stack(t_stack **a, t_stack **b);
 void	sort_to_optimize(t_stack **a, t_stack **b);
 void	sort_to_finish(t_stack **a);
-
-// Stack structure functions
-void	stack_init_a(t_stack **a, char **str_num, int event);
-t_stack	*stack_get_last_node(t_stack *stack);
-void	stack_add_node(t_stack **stack, int num);
-size_t	stack_size(t_stack *stack);
-void	stack_free(t_stack **stack);
-t_stack	*stack_get_highest_node(t_stack *stack);
-t_stack *stack_get_lowest_node(t_stack *stack);
-t_stack	*stack_get_highest_node(t_stack *stack);
-
-
-void	sort_three_nodes(t_stack **a);
-void	sort_stack(t_stack **a, t_stack **b);
 
 // Push functions pa | pb
 void	pa(t_stack **a, t_stack **b);
@@ -95,6 +96,9 @@ void	ss(t_stack **a, t_stack **b);
 void	ra(t_stack **a);
 void	rb(t_stack **b);
 void	rr(t_stack **a, t_stack **b);
+void	rotate_stack(t_stack **stack, t_stack *stack_node, char c);
+void	rotate_optimize(t_stack **a, t_stack **b, t_stack *cheapest_node, \
+		size_t fst_half);
 
 // Reverse rotatte functions rra | rrb | rrr
 
