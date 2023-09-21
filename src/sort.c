@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 12:31:05 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/20 23:12:59 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/21 11:28:13 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,23 +39,24 @@ void	sort_to_optimize(t_stack **a, t_stack **b)
 {
 	t_stack	*cheapest_node;
 
-	cheapest_node = stack_get_cheapest(*b);
-	if (cheapest_node->fst_half == 1 && cheapest_node->target->fst_half == 1)
+	cheapest_node = stack_get_cheapest_node(*b);
+	if (cheapest_node->one_half == 1 && cheapest_node->target->one_half == 1)
 		rotate_optimize(a, b, cheapest_node, 1);
-	else if (cheapest_node->fst_half == 0 \
-			&& cheapest_node->target->fst_half == 0)
+	else if (cheapest_node->one_half == 0 \
+			&& cheapest_node->target->one_half == 0)
 		rotate_optimize(a, b, cheapest_node, 0);
 	rotate_stack(b, cheapest_node, 'b');
 	rotate_stack(a, cheapest_node->target, 'a');
 	pa(a, b);
 }
 
-void	sort_to_finish(t_satck **a)
+void	sort_to_finish(t_stack **a)
 {
 	t_stack	*lowest_node;
 	
-	stack_set_index(a);
-	if (lowest_node == 1)
+	stack_set_idx(*a);
+	lowest_node = stack_get_lowest_node(*a);
+	if (lowest_node->idx == 1)
 	{
 		while (*a != lowest_node)
 			ra(a);
@@ -81,7 +82,7 @@ void	sort_stack(t_stack **a, t_stack **b)
 			pb (b, a);
 			size_a--;
 		}
-	sort_three_nodes(*a);
+	sort_three_nodes(a);
 	while (*b)
 	{
 		stack_init_nodes(*a, *b);
