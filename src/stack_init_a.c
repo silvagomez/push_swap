@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 22:46:50 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/15 22:50:22 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/21 22:28:24 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 size_t	get_total_nums(char **str_num)
 {
 	size_t	size;
+
 	size = 0;
 	while (str_num[size])
 		size++;
