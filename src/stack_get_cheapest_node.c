@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 14:27:24 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/16 15:44:23 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/21 10:22:20 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_stack	*stack_get_cheapest_node(t_stack *stack)
 
 	if (!stack)
 		return (NULL);
-	cheaspest_node = NULL;
+	cheapest_node = NULL;
 	while (stack)
 	{
 		if (stack->cheapest == 1)

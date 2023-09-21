@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 23:18:31 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/16 15:27:34 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/21 11:16:41 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	stack_set_target(t_stack *a, t_stack *b)
 {
-	t_stack	*target;
+	t_stack	*target_node;
 	t_stack	*temp_a;
 	int		target_index;
 
@@ -24,16 +24,16 @@ void	stack_set_target(t_stack *a, t_stack *b)
 		temp_a = a;
 		while (temp_a)
 		{
-			if (temp_a->a > b->num && temp_a->num < target_index)
+			if (temp_a->num > b->num && temp_a->num < target_index)
 			{
 				target_index = temp_a->num;
-				taget = tem_a;
+				target_node = temp_a;
 			}
 			temp_a = temp_a->next;
 		}
 		if (INTMAX == target_index)
 			b->target = stack_get_lowest_node(a);
 		else
-			b->target = target;
+			b->target = target_node;
 	}
 }

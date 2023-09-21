@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 23:18:45 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/16 15:18:55 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/21 11:21:15 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ void	stack_set_move_cost(t_stack *a, t_stack *b)
 	while (b)
 	{
 		b->move_cost = b->idx;
-		if (b->first_half == 0)
+		if (b->one_half == 0)
 			b->move_cost = size_b - b->idx;
-		if (b->target->firt_half == 1)
+		if (b->target->one_half == 1)
 			b->move_cost += b->target->idx;
 		else
 			b->move_cost += size_a - b->target->idx;

@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 22:39:25 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/15 22:40:14 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/21 10:21:50 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ t_stack *stack_get_lowest_node(t_stack *stack)
 			lowest_num = stack->num;
 			lowest_node = stack;
 		}
-		ft_print("LOWest num %d\n", lowest_num);
+		ft_printf("LOWest num %d\n", lowest_num);
 		stack = stack->next;
 	}
+	return (lowest_node);
 }

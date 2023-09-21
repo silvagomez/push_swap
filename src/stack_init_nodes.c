@@ -6,13 +6,13 @@
 /*   By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 23:26:26 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/16 15:14:10 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/21 11:36:28 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include.h"
+#include "push_swap.h"
 
-void	stack_init_nodes(t_sack *a, t_stack *b)
+void	stack_init_nodes(t_stack *a, t_stack *b)
 {
 	stack_set_idx(a);
 	stack_set_idx(b);

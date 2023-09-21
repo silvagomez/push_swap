@@ -6,11 +6,11 @@
 /*   By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 22:43:16 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/15 22:44:03 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/21 12:22:13 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.c"
+#include "push_swap.h"
 
 size_t	stack_size(t_stack *stack)
 {

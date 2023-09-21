@@ -6,20 +6,20 @@
 /*   By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 23:19:02 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/16 15:32:36 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/21 11:23:01 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	stack_set_cheapest(t_satck *b)
+void	stack_set_cheapest(t_stack *b)
 {
 	t_stack	*cheapest_node;
-	int		cheapest_cost;
+	size_t	cheapest_cost;
 
 	if (!b)
 		return ;
-	cheapest_cost = MAXINT;
+	cheapest_cost = INTMAX;
 	while (b)
 	{
 		if (b->move_cost < cheapest_cost)
