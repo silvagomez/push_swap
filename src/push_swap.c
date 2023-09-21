@@ -6,13 +6,13 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:49:31 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/20 23:12:40 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/21 12:20:07 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_stack_sorted(t_stack *stack)
+static int	is_stack_sorted(t_stack *stack)
 {
 	if (!stack)
 		return (1);
@@ -37,7 +37,7 @@ void	push_swap(char **str_num, int event)
 	a = NULL;
 	b = NULL;
 	stack_init_a(&a, str_num, event);
-	if (!is_stack_sorted(a))
+	if (is_stack_sorted(a) == 0)
 	{
 		if (stack_size(a) == 2)
 			sa(&a);
