@@ -6,7 +6,7 @@
 #    By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/21 00:04:57 by dsilva-g          #+#    #+#              #
-#    Updated: 2023/09/20 23:06:03 by dsilva-g         ###   ########.fr        #
+#    Updated: 2023/09/21 11:39:59 by dsilva-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,8 +37,22 @@ SRC				:=	\
 					push.c \
 					swap.c \
 					rotate.c \
-					reverse_rotate.c\
+					reverse_rotate.c \
+					stack_init_a.c \
+					stack_init_nodes.c \
+					stack_add_node.c \
+					stack_size.c \
+					stack_free.c \
+					stack_get_lowest_node.c \
+					stack_get_highest_node.c \
+					stack_get_cheapest_node.c \
+					stack_get_last_node.c \
+					stack_set_idx.c \
+					stack_set_target.c \
+					stack_set_move_cost.c \
+					stack_set_cheapest.c \
 					sort.c \
+					rotate_optimize.c
 
 SRC				:=	$(SRC:%=$(SRC_PATH)%)
 
