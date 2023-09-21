@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 12:33:06 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/15 22:54:57 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/21 22:29:11 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ void	error_validate(char **s, int event)
 		free_2d_str(s);
 		error_terminate("ERROR 4");
 	}
-		error_terminate("ERROR 5");
+	error_terminate("ERROR 5");
 }
