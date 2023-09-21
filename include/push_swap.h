@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:50:11 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/21 11:45:03 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/21 22:39:07 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "../libft/libft.h"
 
 # define INTMAX 2147483647
-# define INTMIN (-2147483647 -1)
+# define INTMIN -2147483648
 # define LONGMAX 9223372036854775807L
 
 typedef struct s_stack
@@ -68,7 +68,7 @@ size_t	stack_size(t_stack *stack);
 void	stack_free(t_stack **stack);
 t_stack	*stack_get_last_node(t_stack *stack);
 t_stack	*stack_get_highest_node(t_stack *stack);
-t_stack *stack_get_lowest_node(t_stack *stack);
+t_stack	*stack_get_lowest_node(t_stack *stack);
 t_stack	*stack_get_cheapest_node(t_stack *stack);
 void	stack_init_nodes(t_stack *a, t_stack *b);
 void	stack_set_idx(t_stack *stack);
@@ -97,13 +97,13 @@ void	ra(t_stack **a);
 void	rb(t_stack **b);
 void	rr(t_stack **a, t_stack **b);
 void	rotate_stack(t_stack **stack, t_stack *stack_node, char c);
-void	rotate_optimize(t_stack **a, t_stack **b, t_stack *cheapest_node, \
-		size_t fst_half);
 
 // Reverse rotatte functions rra | rrb | rrr
 
 void	rra(t_stack **a);
 void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
+
+// Optimize rotatte and reverse rotate
 
 #endif
