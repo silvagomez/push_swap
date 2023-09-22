@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 23:18:31 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/21 11:16:41 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/21 14:15:59 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,7 @@ void	stack_set_target(t_stack *a, t_stack *b)
 			b->target = stack_get_lowest_node(a);
 		else
 			b->target = target_node;
+		ft_printf("%d his target pointer is %p with num: %d\n", b->num, b->target, b->target->num);
+		b = b->next;
 	}
 }
