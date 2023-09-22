@@ -6,13 +6,11 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 12:31:05 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/22 17:06:21 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/22 17:47:04 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	sort(t_stack **a, t_stack **b);
 
 void	sort_three_nodes(t_stack **a)
 {
@@ -92,7 +90,7 @@ void	sort_stack(t_stack **a, t_stack **b)
 	}
 	sort_to_finish(a);
 }
-
+/*
 void	sort_idea_1(t_stack **a, t_stack **b)
 {
 	t_stack	*lowest_node;
@@ -122,3 +120,4 @@ void	sort_idea_1(t_stack **a, t_stack **b)
 	while (*b)
 		pa(a, b);
 }
+*/

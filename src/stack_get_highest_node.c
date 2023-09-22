@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 22:36:49 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/22 10:29:27 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/22 18:00:31 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_stack	*stack_get_highest_node(t_stack *stack)
 			highest_num = stack->num;
 			highest_node = stack;
 		}
-		ft_printf("HIghest num %d\n", highest_num);
+		//ft_printf("HIghest num %d\n", highest_num);
 		stack = stack->next;
 	}
 	return (highest_node);
