@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:49:31 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/22 10:04:27 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/22 15:12:31 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ static int	is_stack_sorted(t_stack *stack)
 	{
 		if (stack->num > stack->next->num)
 		{
-			ft_printf("NOT sorted\n");
+			//ft_printf("NOT sorted\n");
 			return (0);
 		}
 		stack = stack->next;
 	}
-	ft_printf("IS sorted\n");
+	//ft_printf("IS sorted\n");
 	return (1);
 }
 
