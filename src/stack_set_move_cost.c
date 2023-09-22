@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 23:18:45 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/21 11:21:15 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/21 23:45:30 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,13 @@ void	stack_set_move_cost(t_stack *a, t_stack *b)
 	size_t	size_a;
 	size_t	size_b;
 
-	if (!a | !b)
-		return ;
+	//if (!a | !b)
+	//	return ;
 	size_a = stack_size(a);
 	size_b = stack_size(b);
 	while (b)
 	{
+		ft_printf("SET move cost\n");
 		b->move_cost = b->idx;
 		if (b->one_half == 0)
 			b->move_cost = size_b - b->idx;

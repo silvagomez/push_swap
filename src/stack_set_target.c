@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 23:18:31 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/21 11:16:41 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/21 23:47:21 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	stack_set_target(t_stack *a, t_stack *b)
 
 	while (b)
 	{
+		ft_printf("SET target\n");
 		target_index = INTMAX;
 		temp_a = a;
 		while (temp_a)
@@ -35,5 +36,6 @@ void	stack_set_target(t_stack *a, t_stack *b)
 			b->target = stack_get_lowest_node(a);
 		else
 			b->target = target_node;
+		b = b->next;
 	}
 }

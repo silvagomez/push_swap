@@ -6,11 +6,13 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 12:31:05 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/21 11:28:13 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/22 00:42:45 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	sort(t_stack **a, t_stack **b);
 
 void	sort_three_nodes(t_stack **a)
 {
@@ -71,6 +73,8 @@ void	sort_to_finish(t_stack **a)
 
 void	sort_stack(t_stack **a, t_stack **b)
 {
+	sort(a, b);
+	/*
 	size_t	size_a;
 
 	size_a = stack_size(*a);
@@ -89,4 +93,31 @@ void	sort_stack(t_stack **a, t_stack **b)
 		sort_to_optimize(a, b);
 	}
 	sort_to_finish(a);
+	*/
+}
+
+void	sort(t_stack **a, t_stack **b)
+{
+	t_stack	*lowest_node;
+	size_t	size_a;
+
+	stack_set_idx(*a);
+	size_a = stack_size(*a);
+	lowest_node = stack_get_lowest_node(*a);
+	while (size_a != 1)
+	{
+		while (*a != lowest_node)
+		{
+			ft_printf("NODE *a num: %d\n", (*a)->num);
+			ft_printf("LOWest_node num: %d\n", lowest_node->num);
+			if (lowest_node->one_half == 1)
+				ra(a);
+			else if (lowest_node->one_half == 0)
+				rra(a);
+		}
+		ft_printf("After 2cond while\n");
+		stack_set_idx(*a);
+		pb (b, a);
+		size_a--;
+	}
 }
