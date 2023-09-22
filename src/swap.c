@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:51:50 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/13 17:21:03 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/21 22:27:35 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,8 @@
  *  |                      ^~
  *  |                  (*  )
  */
-
 static void	swap(t_stack **stack)
 {
-	//unsigned int	size;
-
-	//size = stack_size(*stack);
 	if (!stack | !*stack | (stack_size(*stack) < 2))
 		return ;
 	*stack = (*stack)->next;

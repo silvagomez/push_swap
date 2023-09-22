@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 17:19:51 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/04 13:46:46 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/21 22:23:17 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,20 +53,7 @@ static size_t	ft_wrdlen(const char *s, char c)
 
 // New free
 static char	**ft_free(char **words_lst, size_t w_idx)
-//static char	**ft_free(char **words_lst)
 {
-	/*
-	size_t	idx;
-
-	idx = 0;
-	while (words_lst[idx]  != 0)
-	{
-		free(words_lst[idx]);
-		idx++;
-	}
-	free(words_lst);
-	return (NULL);
-	*/
 	while (w_idx > 0)
 	{
 		free(words_lst[w_idx]);
@@ -93,11 +80,10 @@ char	**ft_split(char const *s, char c)
 	while (w_idx < t_words)
 	{
 		while (*s != '\0' && *s == c)
-		s++;
+			s++;
 		w_len = ft_wrdlen(s, c);
 		words_lst[w_idx] = ft_substr(s, 0, w_len);
 		if (!(words_lst[w_idx]))
-			//return (ft_free(words_lst));
 			return (ft_free(words_lst, w_idx));
 		s = s + w_len;
 		w_idx++;
