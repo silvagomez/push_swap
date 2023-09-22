@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 22:36:49 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/15 22:39:08 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/22 10:29:27 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_stack	*stack_get_highest_node(t_stack *stack)
 	int		highest_num;
 
 	highest_num = -2147483648;
-	while (stack->next)
+	while (stack)
 	{
 		if (stack->num > highest_num)
 		{

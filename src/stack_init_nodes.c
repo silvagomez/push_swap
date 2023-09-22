@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 23:26:26 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/21 23:37:48 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/22 17:16:50 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	stack_init_nodes(t_stack *a, t_stack *b)
 {
-	ft_printf("Init nodes\n");
+	//ft_printf("Init nodes\n");
 	stack_set_idx(a);
-	ft_printf("Init nodes check b\n");
+	//ft_printf("Init nodes check b\n");
 	if (b)
 	{
 		stack_set_idx(b);

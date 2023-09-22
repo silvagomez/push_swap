@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 23:18:31 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/22 10:06:05 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/22 17:12:38 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	stack_set_target(t_stack *a, t_stack *b)
 
 	while (b)
 	{
-		ft_printf("SET target\n");
-		target_index = INTMAX;
+		//ft_printf("SET target\n");
+		target_index = 2147483647;
 		temp_a = a;
 		while (temp_a)
 		{

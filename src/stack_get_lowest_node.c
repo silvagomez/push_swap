@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 22:39:25 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/21 23:30:54 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/22 15:02:56 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_stack *stack_get_lowest_node(t_stack *stack)
 	int		lowest_num;
 
 	lowest_num = 2147483647;
-	while (stack->next)
+	while (stack)
 	{
 		if (stack->num < lowest_num)
 		{
