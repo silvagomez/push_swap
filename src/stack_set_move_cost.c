@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 23:18:45 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/25 13:00:09 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/25 13:01:23 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	stack_set_move_cost(t_stack *a, t_stack *b)
 			if (b->target->idx > b->idx)
 				b->move_cost = b->idx + (b->target->idx - b->idx);
 			else
-				b->move_cost = b->target->idx + (b->idx - b->target-idx);
+				b->move_cost = b->target->idx + (b->idx - b->target->idx);
 		}
 		else if (b->target->one_half == 0 && b->one_half == 1)
 		{
@@ -65,7 +65,7 @@ void	stack_set_move_cost(t_stack *a, t_stack *b)
 		}
 		else if (b->target->one_half == 1 && b->one_half == 0)
 		{
-			b->move_cost = b->target->idx + (size-b - b->idx);
+			b->move_cost = b->target->idx + (size_b - b->idx);
 		}
 		else if (b->target->one_half == 0 && b->one_half == 0)
 		{
