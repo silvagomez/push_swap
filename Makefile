@@ -6,7 +6,7 @@
 #    By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/21 00:04:57 by dsilva-g          #+#    #+#              #
-#    Updated: 2023/09/21 11:39:59 by dsilva-g         ###   ########.fr        #
+#    Updated: 2023/09/25 10:13:17 by dsilva-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,7 @@ SRC				:=	\
 					stack_set_move_cost.c \
 					stack_set_cheapest.c \
 					sort.c \
-					rotate_optimize.c
+					r_rr_optimize.c
 
 SRC				:=	$(SRC:%=$(SRC_PATH)%)
 

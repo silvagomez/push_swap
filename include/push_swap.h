@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:50:11 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/21 23:13:13 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/25 10:09:06 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,14 +98,13 @@ void	rb(t_stack **b);
 void	rr(t_stack **a, t_stack **b);
 
 // Reverse rotatte functions rra | rrb | rrr
-
 void	rra(t_stack **a);
 void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
 
 // Utils for rotatte and reverse rotate
-void	rotate_optimize(t_stack **a, t_stack **b, t_stack *cheapest_node, \
+void	r_rr_stack(t_stack **stack, t_stack *stack_node, char c);
+void	r_rr_optimize(t_stack **a, t_stack **b, t_stack *cheapest_node, \
 		size_t one_half);
-void	rotate_stack(t_stack **stack, t_stack *stack_node, char c);
 
 #endif
