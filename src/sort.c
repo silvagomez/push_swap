@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 12:31:05 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/22 17:47:04 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/24 23:39:46 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,25 +69,73 @@ void	sort_to_finish(t_stack **a)
 
 }
 
+void	sort_idea_2(t_stack **a, t_stack **b, size_t size_a)
+{
+	t_stack	*lowest_node;
+
+	while (size_a != 3)
+	{
+		stack_set_idx(*a);
+		lowest_node = stack_get_lowest_node(*a);
+		while (*a != lowest_node)
+		{
+			if (lowest_node->one_half == 1)
+				ra(a);
+			else if (lowest_node->one_half == 0)
+				rra(a);
+		}
+		if (*a == lowest_node)
+		{
+			pb (b, a);
+			size_a--;
+		}
+	}
+	//sort_three_nodes(a);
+
+/*
+	while (size_a != 3)
+	{
+		lowest_node = stack_get_lowest_node(*a)
+		while (*a != lowest_node)
+
+		pb(b, a);
+		size_a--;
+	}
+	if ((*a)->num > (*a)->next->num)
+		sa(a);
+		*/
+	/*
+	while(*b)
+	{
+		stack_init_nodes(*a, *b);
+		sort_to_optimize(a, b);
+	}
+	*/
+}
+
 void	sort_stack(t_stack **a, t_stack **b)
 {
 	size_t	size_a;
 
 	size_a = stack_size(*a);
-	if (size_a == 5)
-		sort_logic_five_nodes(a, b);
+	sort_idea_2(a, b, size_a);
+	/*
+	if (size_a >= 5)
+		//sort_logic_five_nodes(a, b);
 	else
 		while (size_a > 3)
 		{
-			pb (b, a);
+			pb(b, a);
 			size_a--;
 		}
+	*/
 	sort_three_nodes(a);
 	while (*b)
 	{
 		stack_init_nodes(*a, *b);
 		sort_to_optimize(a, b);
 	}
+
 	sort_to_finish(a);
 }
 /*
