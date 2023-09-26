@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:50:11 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/25 10:09:06 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/26 16:36:32 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 
 // Allowed libraries
 # include "../libft/libft.h"
-
-# define INTMAX 2147483647
-# define INTMIN -2147483648
-# define LONGMAX 9223372036854775807L
 
 typedef struct s_stack
 {
@@ -63,7 +59,7 @@ size_t	get_total_nums(char **str_num);
 
 // Stack structure functions
 void	stack_init_a(t_stack **a, char **str_num, int event);
-void	stack_add_node(t_stack **stack, int num);
+size_t	stack_add_node(t_stack **stack, int num);
 size_t	stack_size(t_stack *stack);
 void	stack_free(t_stack **stack);
 t_stack	*stack_get_last_node(t_stack *stack);
