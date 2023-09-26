@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 12:28:30 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/26 16:40:41 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/26 17:24:30 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	validate_str_av(char *s)
 	if (!s || !*s)
 		error_terminate("ERROR");
 	idx = 0;
+	if (s[idx] == ' ')
+		error_terminate("ERROR");
 	while (s[idx])
 	{
 		if (!ft_isdigit(s[idx]) && s[idx] != '+' && s[idx] != '-' && \
@@ -116,7 +118,7 @@ void	validate_av(char **str_num, int event)
 		if (validate_chr(str_num[idx]) == 0)
 			error_validate(str_num, event);
 		num = ft_atol(str_num[idx]);
-		if (num < -2147483648 || num > 214748364)
+		if (num < -2147483648 || num > 2147483647)
 			error_validate(str_num, event);
 		idx++;
 	}
