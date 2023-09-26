@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 22:44:53 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/21 22:34:21 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/26 15:23:22 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,23 @@
 
 /*
  * The a stack pointer changes only once -> from NULL to the first node.
- *
+ * *a->next points to the next node, the last node points to NULL.
+ * *a->prev points to the prev node, the first node point to NULL.
+ * Example:
+ * NULL<-stack<-last_node->node->NNULL
  */
-void	stack_add_node(t_stack **stack, int num)
+size_t	stack_add_node(t_stack **stack, int num)
 {
 	t_stack	*node;
 	t_stack	*last_node;
 
 	if (!stack)
-		return ;
+		return (0);
 	node = malloc(sizeof(t_stack));
 	if (!node)
 	{
-		// here error and free
-		// free_stack();
-		ft_printf("node is null !!!!\n");
-		return ;
+		stack_free(stack);
+		return (0);
 	}
 	node->next = NULL;
 	node->num = num;
@@ -44,4 +45,5 @@ void	stack_add_node(t_stack **stack, int num)
 		last_node->next = node;
 		node->prev = last_node;
 	}
+	return (1);
 }

@@ -6,13 +6,20 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:52:21 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/25 09:42:45 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/26 16:31:54 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void rotate(t_stack **stack)
+/*
+ * "stack" is a pointer to pointer;
+ * did you mean to dereference it before applying "->" to it?
+ *  |         *stack = *stack->next;
+ *  |                      ^~
+ *  |                  (*  )
+ */
+static void	rotate(t_stack **stack)
 {
 	t_stack	*last_node;
 

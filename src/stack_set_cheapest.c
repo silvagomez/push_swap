@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 23:19:02 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/22 17:10:43 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/26 16:21:51 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	stack_set_cheapest(t_stack *b)
 	cheapest_cost = 2147483647;
 	while (b)
 	{
-		//ft_printf("SET cheapest\n");
 		if (b->move_cost < cheapest_cost)
 		{
 			cheapest_cost = b->move_cost;

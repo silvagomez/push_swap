@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 17:09:18 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/25 10:09:00 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/26 16:31:15 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,10 @@ void	r_rr_stack(t_stack **stack, t_stack *stack_node, char c)
 	}
 }
 
+/*
+ * The cheapest node and the target of the cheapest node will go to
+ * the first/head of the stack.
+ */
 void	r_rr_optimize(t_stack **a, t_stack **b, t_stack *cheapest_node, \
 		size_t one_half)
 {
@@ -45,7 +49,7 @@ void	r_rr_optimize(t_stack **a, t_stack **b, t_stack *cheapest_node, \
 		if (one_half == 1)
 			rr(a, b);
 		else if (one_half == 0)
-			rrr(a,b);
+			rrr(a, b);
 	}
 	stack_set_idx(*a);
 	stack_set_idx(*b);

@@ -6,12 +6,15 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 12:31:05 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/25 11:17:26 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/26 16:35:21 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/* 
+ * Sort 3 numbers.
+ */
 void	sort_three_nodes(t_stack **a)
 {
 	t_stack	*highest_node;
@@ -25,6 +28,9 @@ void	sort_three_nodes(t_stack **a)
 		sa(a);
 }
 
+/*
+ * Prepare 5 numbers for sorting sending the 2 lowest node to stack b.
+ */
 void	sort_five_nodes(t_stack **a, t_stack **b, size_t size_a)
 {
 	t_stack	*lowest_node;
@@ -59,7 +65,6 @@ void	sort_logic_five_nodes(t_stack **a, t_stack **b)
 	}
 }
 */
-
 /*
 void	sort_five_idea_1(t_stack **a, t_stack **b, size_t size_a)
 {
@@ -82,6 +87,9 @@ void	sort_five_idea_1(t_stack **a, t_stack **b, size_t size_a)
 }
 */
 
+/*
+ * Optimize move, inspiration VIM relative numbers. 
+ */
 void	sort_to_optimize(t_stack **a, t_stack **b)
 {
 	t_stack	*cheapest_node;
@@ -100,10 +108,10 @@ void	sort_to_optimize(t_stack **a, t_stack **b)
 void	sort_to_finish(t_stack **a)
 {
 	t_stack	*lowest_node;
-	
+
 	stack_set_idx(*a);
 	lowest_node = stack_get_lowest_node(*a);
-	if (lowest_node->idx == 1)
+	if (lowest_node->one_half == 1)
 	{
 		while (*a != lowest_node)
 			ra(a);
@@ -113,7 +121,6 @@ void	sort_to_finish(t_stack **a)
 		while (*a != lowest_node)
 			rra(a);
 	}
-
 }
 
 void	sort_stack(t_stack **a, t_stack **b)
@@ -124,19 +131,19 @@ void	sort_stack(t_stack **a, t_stack **b)
 	if (size_a < 6)
 		sort_five_nodes(a, b, size_a);
 	else
+	{
 		while (size_a > 3)
 		{
 			pb(b, a);
 			size_a--;
 		}
-	// with 2
+	}
 	sort_three_nodes(a);
 	while (*b)
 	{
 		stack_init_nodes(*a, *b);
 		sort_to_optimize(a, b);
 	}
-
 	sort_to_finish(a);
 }
 

@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 22:46:50 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/21 22:28:24 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/26 13:21:07 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	*get_nums(char **str_num, size_t size, int event)
 {
 	int		*nums;
 	size_t	idx;
-	
+
 	nums = (int *)malloc(size * sizeof(int));
 	if (!nums)
 		error_validate(str_num, event);
@@ -39,19 +39,26 @@ int	*get_nums(char **str_num, size_t size, int event)
 	return (nums);
 }
 
-void    stack_init_a(t_stack **a, char **str_num, int event)
+/*
+ * Create/add number to the node of stack a.
+ */
+void	stack_init_a(t_stack **a, char **str_num, int event)
 {
 	int		*nums;
 	size_t	size;
 	size_t	idx;
-	
+
 	size = get_total_nums(str_num);
 	nums = get_nums(str_num, size, event);
 	idx = 0;
 	while (idx < size)
 	{
-		stack_add_node(a, nums[idx]);
-		idx++;
+		if (stack_add_node(a, nums[idx]) == 0)
+		{
+			free(nums);
+			error_validate(str_num, event);
+		}
+			idx++;
 	}
 	free(nums);
 }

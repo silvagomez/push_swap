@@ -6,12 +6,19 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:52:09 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/21 22:25:54 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/26 16:30:49 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/*
+ * "stack" is a pointer to pointer;
+ * did you mean to dereference it before applying "->" to it?
+ *  |         *stack = *stack->next;
+ *  |                      ^~
+ *  |                  (*  )
+ */
 static void	push(t_stack **dest, t_stack **src)
 {
 	t_stack	*node_to_push;
@@ -44,6 +51,6 @@ void	pa(t_stack **a, t_stack **b)
 
 void	pb(t_stack **b, t_stack **a)
 {
-	push(b,a);
+	push(b, a);
 	ft_putendl_fd("pb", 1);
 }

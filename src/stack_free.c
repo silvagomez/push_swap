@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 22:48:05 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/15 22:48:56 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/26 13:32:24 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 void	stack_free(t_stack **stack)
 {
 	t_stack	*temp;
-	t_stack	*current;
+	t_stack	*node;
 
 	if (!stack)
 		return ;
-	current = *stack;
-	while (current)
+	node = *stack;
+	while (node)
 	{
-		temp = current->next;
-		free(current);
-		current = temp;
+		temp = node->next;
+		free(node);
+		node = temp;
 	}
 	*stack = NULL;
 }
