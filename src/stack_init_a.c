@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 22:46:50 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/26 13:21:07 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/27 23:20:48 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	stack_init_a(t_stack **a, char **str_num, int event)
 			free(nums);
 			error_validate(str_num, event);
 		}
-			idx++;
+		idx++;
 	}
 	free(nums);
 }

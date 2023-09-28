@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 23:18:45 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/26 16:40:19 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/27 23:21:35 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ size_t	move_cost_same_half(t_stack *b, size_t size_a, size_t size_b, \
 		size_t one_half)
 {
 	if (one_half == 1)
-	{	
+	{
 		if (b->target->idx > b->idx)
 			return (b->idx + (b->target->idx - b->idx));
 		else
@@ -58,7 +58,7 @@ size_t	move_cost_same_half(t_stack *b, size_t size_a, size_t size_b, \
 		else
 			return (size_b - b->idx);
 	}
-}	
+}
 
 /*
  * Like vim calculate the relaitve number for move_cost in stack "b"
