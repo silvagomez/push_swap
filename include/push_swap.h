@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 10:50:11 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/26 16:36:32 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/27 23:48:53 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,6 @@ void	error_validate(char **s, int event);
 
 // Free memory functions
 void	free_2d_str(char **s);
-
-// free_stack
-// get_size_stack
-// add_node_stack
-// get_last_node_stack
-// create_stack_a
-// init_stack
 
 //	Push swap functions
 void	push_swap(char **str_num, int event);
