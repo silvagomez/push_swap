@@ -6,7 +6,7 @@
 #    By: dsilva-g <dsilva-g@student.42urduliz.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/21 00:04:57 by dsilva-g          #+#    #+#              #
-#    Updated: 2023/09/28 03:02:15 by dsilva-g         ###   ########.fr        #
+#    Updated: 2023/09/28 13:40:19 by dsilva-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,10 +74,7 @@ SRC_BONUS		:=	\
 					reverse_rotate_bonus.c \
 					stack_bonus.c \
 					stack_utils_bonus.c \
-					stack_setters_bonus.c \
-					stack_getters_bonus.c \
-					sort_bonus.c \
-					r_rr_optimize_bonus.c
+					stack_getters_bonus.c 
 
 SRC_BONUS		:=	$(SRC_BONUS:%=$(SRC_BPATH)%)
 
