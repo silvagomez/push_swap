@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 12:33:06 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/28 03:11:39 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/28 13:27:04 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ void	error_unknow_move(t_stack **a, t_stack **b, char *line)
 	free(line);
 	stack_free(a);
 	stack_free(b);
-	error_terminate("ERROR: unknown move OR invalid move");
+	ft_putstr_fd("ERROR: unknown move OR ", 2);
+	error_terminate("invalid move, because node doesnt exist in the stack.");
 }

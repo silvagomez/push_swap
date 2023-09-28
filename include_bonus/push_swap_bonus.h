@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 19:06:56 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/28 03:17:42 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/28 13:43:31 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@ typedef struct s_stack
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }				t_stack;
+
+typedef struct s_sizes
+{
+	size_t	a;
+	size_t	b;
+}				t_sizes;
 
 // Validate functions
 void	validate_str_av(char *s);
@@ -57,21 +63,6 @@ size_t	stack_add_node(t_stack **stack, int num);
 size_t	stack_size(t_stack *stack);
 void	stack_free(t_stack **stack);
 t_stack	*stack_get_last_node(t_stack *stack);
-t_stack	*stack_get_highest_node(t_stack *stack);
-t_stack	*stack_get_lowest_node(t_stack *stack);
-t_stack	*stack_get_cheapest_node(t_stack *stack);
-void	stack_init_nodes(t_stack *a, t_stack *b);
-void	stack_set_idx(t_stack *stack);
-void	stack_set_target(t_stack *a, t_stack *b);
-void	stack_set_move_cost(t_stack *a, t_stack *b);
-void	stack_set_cheapest(t_stack *b);
-
-//	Sort functions
-void	sort_three_nodes(t_stack **a);
-void	sort_logic_five_nodes(t_stack **a, t_stack **b);
-void	sort_stack(t_stack **a, t_stack **b);
-void	sort_to_optimize(t_stack **a, t_stack **b);
-void	sort_to_finish(t_stack **a);
 
 // Push functions pa | pb
 void	pa(t_stack **a, t_stack **b);
@@ -91,10 +82,5 @@ void	rr(t_stack **a, t_stack **b);
 void	rra(t_stack **a);
 void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
-
-// Utils for rotatte and reverse rotate
-void	r_rr_stack(t_stack **stack, t_stack *stack_node, char c);
-void	r_rr_optimize(t_stack **a, t_stack **b, t_stack *cheapest_node, \
-		size_t one_half);
 
 #endif

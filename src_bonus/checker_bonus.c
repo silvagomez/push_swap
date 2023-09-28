@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 19:06:44 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/09/28 02:59:50 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/28 13:43:33 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,29 +25,30 @@ static int	is_stack_sorted(t_stack *stack)
 	return (1);
 }
 
-static void	checker_move_stack(t_stack **a, t_stack **b, char *line)
+static void	checker_move_stack(t_stack **a, t_stack **b, char *line, \
+		t_sizes size)
 {
 	if (ft_strncmp("pa\n", line, 3) == 0 && *b)
 		pa(a, b);
-	else if (ft_strncmp("pb\n", line, 3) == 0 && *a && b)
+	else if (ft_strncmp("pb\n", line, 3) == 0 && *a)
 		pb(b, a);
-	else if (ft_strncmp("sa\n", line, 3) == 0 && *a)
+	else if (ft_strncmp("sa\n", line, 3) == 0 && size.a > 1)
 		sa(a);
-	else if (ft_strncmp("sb\n", line, 3) == 0 && *b)
+	else if (ft_strncmp("sb\n", line, 3) == 0 && size.b > 1)
 		sb(b);
-	else if (ft_strncmp("ss\n", line, 3) == 0 && *a && *b)
+	else if (ft_strncmp("ss\n", line, 3) == 0 && size.a > 1 && size.b > 1)
 		ss(a, b);
-	else if (ft_strncmp("ra\n", line, 3) == 0 && *a)
+	else if (ft_strncmp("ra\n", line, 3) == 0 && size.a > 1)
 		ra(a);
-	else if (ft_strncmp("rb\n", line, 3) == 0 && *b)
+	else if (ft_strncmp("rb\n", line, 3) == 0 && size.b > 1)
 		rb(b);
-	else if (ft_strncmp("rr\n", line, 3) == 0 && *a && *b)
+	else if (ft_strncmp("rr\n", line, 3) == 0 && size.a > 1 && size.b > 1)
 		rr(a, b);
-	else if (ft_strncmp("rra\n", line, 4) == 0 && *a)
+	else if (ft_strncmp("rra\n", line, 4) == 0 && size.a > 1)
 		rra(a);
-	else if (ft_strncmp("rrb\n", line, 4) == 0 && *b)
+	else if (ft_strncmp("rrb\n", line, 4) == 0 && size.b > 1)
 		rrb(b);
-	else if (ft_strncmp("rrr\n", line, 4) == 0 && *a && *b)
+	else if (ft_strncmp("rrr\n", line, 4) == 0 && size.a > 1 && size.b > 1)
 		rrr(a, b);
 	else
 		error_unknow_move(a, b, line);
@@ -71,15 +72,20 @@ void	checker(char **str_num, int event)
 	t_stack	*b;
 	size_t	size_a;
 	char	*line;
+	t_sizes	size;
 
 	a = NULL;
 	b = NULL;
 	stack_init_a(&a, str_num, event);
 	size_a = stack_size(a);
+	size.a = 0;
+	size.b = 0;
 	line = get_next_line(0);
 	while (line)
 	{
-		checker_move_stack(&a, &b, line); 
+		size.a = stack_size(a);
+		size.b = stack_size(b);
+		checker_move_stack(&a, &b, line, size);
 		free(line);
 		line = get_next_line(0);
 	}
