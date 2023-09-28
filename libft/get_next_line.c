@@ -6,7 +6,7 @@
 /*   By: dsilva-g <dsilva-g@student.42urduli>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 13:42:16 by dsilva-g          #+#    #+#             */
-/*   Updated: 2023/08/09 11:01:58 by dsilva-g         ###   ########.fr       */
+/*   Updated: 2023/09/28 03:29:19 by dsilva-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ static char	*ft_keep_for_next(char *buf_line)
 	}
 	temp4 = malloc(ft_strlen_gnl(buf_line) - i + 1 * sizeof(char));
 	if (!temp4)
+	{
+		free(buf_line);
 		return (NULL);
+	}
 	i++;
 	j = 0;
 	while (buf_line[i] != '\0')
